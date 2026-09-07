@@ -168,6 +168,18 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .section-head { max-width: 640px; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
 .section-head--center { max-width: 640px; margin-inline: auto; text-align: center; }
+/* Texto que se apoya directo sobre el video: blanco/crema con sombra oscura,
+   para que se despegue tanto en las partes claras como oscuras del video. */
+.section-head .eyebrow, .section-head--center .eyebrow {
+  color: var(--crema); text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 14px rgba(0,0,0,.75);
+}
+.section-head h1, .section-head h2, .section-head h3, .section-head h4,
+.section-head--center h1, .section-head--center h2, .section-head--center h3, .section-head--center h4 {
+  color: var(--white); text-shadow: 0 2px 6px rgba(0,0,0,.9), 0 6px 30px rgba(0,0,0,.75), 0 1px 1px rgba(0,0,0,.95);
+}
+.section-head p, .section-head--center p {
+  color: var(--crema); text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 16px rgba(0,0,0,.75);
+}
 
 /* =============================================================
    4. Tipografía
@@ -551,10 +563,10 @@ input, textarea, select { font: inherit; color: inherit; }
    fondo del sitio se deja ver también aquí. */
 .page-hero__bg { display: none; }
 .page-hero__content { position: relative; z-index: 1; max-width: 720px; }
-.page-hero__content .eyebrow { color: var(--terracota-dark); }
-.page-hero__content h1 { color: var(--carbon); }
-.page-hero__content p { color: var(--carbon); }
-.breadcrumb { display: flex; gap: .5rem; align-items: center; font-size: .85rem; color: var(--crema-dark); margin-bottom: 1.2rem; opacity: .85; }
+.page-hero__content .eyebrow { color: var(--crema); text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 14px rgba(0,0,0,.75); }
+.page-hero__content h1 { color: var(--white); text-shadow: 0 2px 6px rgba(0,0,0,.9), 0 6px 30px rgba(0,0,0,.75), 0 1px 1px rgba(0,0,0,.95); }
+.page-hero__content p { color: var(--crema); text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 16px rgba(0,0,0,.75); }
+.breadcrumb { display: flex; gap: .5rem; align-items: center; font-size: .85rem; color: var(--crema-dark); margin-bottom: 1.2rem; opacity: .85; text-shadow: 0 1px 3px rgba(0,0,0,.85), 0 2px 10px rgba(0,0,0,.65); }
 .breadcrumb a:hover { color: var(--white); }
 
 /* --- Footer --- */
@@ -595,19 +607,19 @@ input, textarea, select { font: inherit; color: inherit; }
 .hero__bg { display: none; }
 .hero__content { position: relative; z-index: 1; padding-bottom: clamp(2rem, 5vh, 3.5rem); max-width: 780px; }
 .hero__badge { margin-bottom: 1.1rem; }
-.hero .eyebrow { color: var(--terracota-dark); margin-bottom: .7rem; }
-.hero h1 { color: var(--carbon); font-weight: 700; font-size: clamp(2.7rem, 6.2vw, 4.9rem); max-width: 14ch; text-shadow: 0 2px 18px rgba(243,236,226,.9), 0 1px 2px rgba(243,236,226,.8); }
-.hero p.lede { color: var(--carbon-soft); margin-top: .9rem; max-width: 54ch; font-style: normal; font-family: var(--sans); font-size: 1.14rem; font-weight: 600; text-shadow: 0 1px 10px rgba(243,236,226,.85); }
+.hero .eyebrow { color: var(--crema); margin-bottom: .7rem; text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 14px rgba(0,0,0,.75); }
+.hero h1 { color: var(--white); font-weight: 700; font-size: clamp(2.7rem, 6.2vw, 4.9rem); max-width: 14ch; text-shadow: 0 2px 6px rgba(0,0,0,.9), 0 6px 30px rgba(0,0,0,.75), 0 1px 1px rgba(0,0,0,.95); }
+.hero p.lede { color: var(--crema); margin-top: .9rem; max-width: 54ch; font-style: normal; font-family: var(--sans); font-size: 1.14rem; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,.9), 0 2px 16px rgba(0,0,0,.75); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 3.9rem; }
 .hero__actions .btn-secondary.btn-on-dark {
-  background: rgba(243,236,226,.55);
+  background: rgba(46,42,38,.5);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  border-color: var(--carbon);
-  color: var(--carbon);
-  box-shadow: 0 2px 14px rgba(46,42,38,.15);
+  border-color: var(--crema);
+  color: var(--crema);
+  box-shadow: 0 2px 14px rgba(0,0,0,.3);
   font-weight: 800;
 }
-.hero__actions .btn-secondary.btn-on-dark:hover { background: var(--carbon); color: var(--crema); border-color: var(--carbon); }
+.hero__actions .btn-secondary.btn-on-dark:hover { background: var(--crema); color: var(--carbon); border-color: var(--crema); }
 
 /* --- Revelación cinética del titular del hero --- */
 .hero h1 .hero-word {
